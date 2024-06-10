@@ -1,0 +1,50 @@
+<form [formGroup]="myFormGroup" (ngSubmit)="onSubmit(myFormGroup)">
+  <div>
+    <label>
+      Name:
+      <input formControlName="name" placeholder="Your name">
+    </label>
+  </div>
+  <div>
+    <label><form [formGroup]="myFormGroup" (ngSubmit)="onSubmit(myFormGroup)">
+      <div>
+        <label>
+          Name:
+          <input formControlName="name" placeholder="Your name">
+        </label>
+        <div *ngIf="myFormGroup.get('name')?.invalid && (myFormGroup.get('name')?.dirty|| myFormGroup.get('name')?.touched)">
+          Please provide a name.
+        </div>
+      </div>
+      <div>
+        <label>
+          Email:
+          <input formControlName="email" placeholder="Your email">
+        </label>
+        <div *ngIf="myFormGroup.get('email')?.invalid && (myFormGroup.get('email')?.dirty|| myFormGroup.get('email')?.touched)">
+          Please provide a valid email address.
+        </div>
+      </div>
+      <div>
+        <label>
+          Message:
+          <input formControlName="message" placeholder="Your message">
+        </label>
+        <div *ngIf="myFormGroup.get('message')?.invalid  && (myFormGroup.get('message')?.dirty || myFormGroup.get('message')?.touched)">
+          Messages must be at least 10 characters long.
+        </div>
+      </div>
+      <button type="submit" [disabled]="myFormGroup.invalid">Send</button>
+    </form>
+      Email:
+      <input formControlName="email" placeholder="Your email">
+    </label>
+  </div>
+  <div>
+    <label>
+      Message:
+      <input formControlName="message" placeholder="Your message">
+    </label>
+  </div>
+  <button type="submit">Send</button>
+</form>

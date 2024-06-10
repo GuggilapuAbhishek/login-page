@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <div class="mt-5">
+    <div class="card w-25">
+      <div class="card-header">
+        <h4 class="text-center">Login Here</h4>
+      </div>
+      <div class="card-body">
+        <div>
+          <label class="form-label">User Name/Email</label>
+          <input class="form-control" type="text" placeholder="Enter User Name" [(ngModel)]="username" />
+        </div>
+        <div>
+          <label class="form-label">Password</label>
+          <input class="form-control" type="password" placeholder="Enter User Password" [(ngModel)]="password"
+            [class.is-invalid]="passwordInvalid" />
+          <div class="invalid-feedback" *ngIf="passwordInvalid">Invalid username or password</div>
+        </div>
+      </div>
+      <div class="card-footer text-center btn-group">
+        <button class="btn btn-primary" (click)="userloginhere()">Login</button>
+      </div>
+      <div class="text-center">
+        Don't Have Account <a href="/register"> click Here</a>
+      </div>
+    </div>
+  </div>
+</div>
